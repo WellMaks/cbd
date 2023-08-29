@@ -18,10 +18,147 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #f7f7f7;
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .navbar-content {
+    display: flex;
+  }
+}
+
+/* Small screens */
+@media (max-width: 1023px) {
+  .navbar-content {
+    display: none;
+  }
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-info {
+  padding-top: 10px;
+}
+
+.product-title {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.product-description {
+  color: #777;
+  margin-bottom: 1em;
+}
+
+.product-price {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.add-to-cart-btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+.relative:hover > div {
+  opacity: 100;
+  transform: translateY(0);
+}
+
+.group .dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out,
+    visibility 0s linear 0.3s;
+  transform: translateY(-1rem);
+}
+
+/* Show the dropdown when the .group (in this case, the relative div) is hovered over */
+.group:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+  16.66%,
+  83.33% {
+    transform: translateX(-100%);
+  }
+  33.33%,
+  66.66% {
+    transform: translateX(-200%);
+  }
+  49.99%,
+  50.01% {
+    transform: translateX(-200%);
+  }
+}
+.slider-wrapper {
+  animation: slide 20s infinite;
+}
+.slider-container {
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  height: 400px;
+  bottom: -150px;
+  margin-top: -150px;
+}
+
+.slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider-image.active {
+  opacity: 1;
+}
+
+.page-body {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.manual-center {
+  width: 90%;
+  margin: 0 auto;
 }
