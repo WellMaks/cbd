@@ -15,7 +15,7 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 12;
-  const restartThreshold = 5; // Number of slides before reaching the end to restart
+  const restartThreshold = 7; // Number of slides before reaching the end to restart
 
   useEffect(() => {
     const interval = setInterval(() => {
